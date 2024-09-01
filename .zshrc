@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source $HOME/.secret.sh
+source $HOME/completion-for-pnpm.sh
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
@@ -169,6 +170,9 @@ zinit light marlonrichert/zsh-autocomplete
 
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
+
+zinit ice atload"zpcdreplay" atclone"./zplug.zsh" atpull"%atclone"
+zinit light g-plane/pnpm-shell-completion
 # override fzf completion to exclude hidden files
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
