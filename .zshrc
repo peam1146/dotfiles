@@ -171,8 +171,8 @@ zinit light marlonrichert/zsh-autocomplete
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
-zinit ice atload"zpcdreplay" atclone"./zplug.zsh" atpull"%atclone"
-zinit light g-plane/pnpm-shell-completion
+# zinit ice atload"zpcdreplay" atclone"./zplug.zsh" atpull"%atclone"
+# zinit light g-plane/pnpm-shell-completion
 # override fzf completion to exclude hidden files
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
@@ -200,3 +200,13 @@ zinit light g-plane/pnpm-shell-completion
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/Users/peam/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+eval "$(gh copilot alias -- zsh)"
