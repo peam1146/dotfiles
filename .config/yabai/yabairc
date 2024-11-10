@@ -50,13 +50,4 @@ yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="WezTerm" space=2
 yabai -m rule --add app="Code" space=3
 yabai -m rule --add app="Discord" space=^4
-
-options=(
-    style=round
-    width=4.5
-    hidpi=off
-    active_color=0xffe2e2e3
-    inactive_color=0xff414550
-)
-
-borders "${options[@]}"
+yabai -m rule --add app="Spotify" space=^5
