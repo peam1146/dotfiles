@@ -8,7 +8,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "tsserver",
+  "ts_ls",
   "tailwindcss",
   "gleam",
   "elixirls",
@@ -21,6 +21,9 @@ local servers = {
 local config = {
   elixirls = {
     cmd = { "/opt/homebrew/Cellar/elixir-ls/0.21.3/bin/elixir-ls" },
+  },
+  ts_ls = {
+    cmd = { "vtsls", "--stdio" },
   },
   tailwindcss = {
     init_options = {

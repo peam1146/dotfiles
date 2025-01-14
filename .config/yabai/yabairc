@@ -39,6 +39,7 @@ yabai -m config \
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
 
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
@@ -48,6 +49,8 @@ $HOME/dotfiles/.config/yabai/create_space.sh
 # ## move some apps automatically to specific spaces
 yabai -m rule --add app="Arc" space=^1
 yabai -m rule --add app="WezTerm" space=2
+yabai -m rule --add app="Ghostty" space=2
 yabai -m rule --add app="Code" space=3
+yabai -m rule --add app="Windsurf" space=3
 yabai -m rule --add app="Discord" space=^4
 yabai -m rule --add app="Spotify" space=^5

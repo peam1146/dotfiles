@@ -13,15 +13,21 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+vim.g.lazy_events_config = {
+    simple = {
+        LazyFile = { "BufReadPost", "BufNewFile", "BufWritePre" },
+    }
+}
+
 -- load plugins
 require("lazy").setup({
+  { "bwpge/lazy-events.nvim", import = "lazy-events.import", lazy = false },
   {
     "NvChad/NvChad",
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
   },
-
   { import = "plugins" },
 }, lazy_config)
 
@@ -36,11 +42,11 @@ local autocmds = vim.api.nvim_create_autocmd
 
 -- highlight on yank
 autocmds("TextYankPost", {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Hightlight selection on yank',
-  pattern = '*',
+  group = vim.api.nvim_create_augroup("highlight_yank", {}),
+  desc = "Hightlight selection on yank",
+  pattern = "*",
   callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 200 }
+    vim.highlight.on_yank { higroup = "IncSearch", timeout = 200 }
   end,
 })
 
